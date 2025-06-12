@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inika", serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #DECDAC;
+    height: 100%;
+}
+
+.main-content {
+    height: 100%;
+    padding: 16px;
+}
+
+.button-container {
+    background-color: #FEFAF3;
+    border-radius: 42px;
+    padding: 48px;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+.popup-button {
+    margin: 24px;
+    font-weight: 400;
+    font-size: 28px;
+    background-color: #EBBF53;
+    height: 56px;
+    border: none;
+    border-radius: 28px;
+    padding-inline: 56px;
+    color: #FEFAF3;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.356);
+
+}
+
+.popup-opened .popup-container {
+    display: block;
+}
+
+.popup {
+    background-color: #FEFAF3;
+    border-radius: 42px;
+    padding: 48px;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    /* display: none; */
+    transform: scale(0);
+    transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.upper-part {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-around;
+    padding: 16px;
+    position: relative;
+    min-height: 180px;
+}
+
+.upper-part .desert-vector{
+    position: relative;
+    width: fit-content;
+    max-height: 130px;
+}
+
+.upper-part .desert-vector img{
+    position: relative;
+    top: -96px;
+    max-width: 220px;
+    max-height: 220px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.popup-text-div h2 {
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0;
+}
+
+.popup-text-div p {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
+form {
+    height: 56px;
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #EEE8DD;
+    border: 1px solid #AFA187;
+    border-right: 0;
+    padding-inline: 14px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    font-size: 24px;
+}
+
+form input::placeholder {
+    color: #AFA187;
+}
+
+form button {
+    height: 100%;
+    border: 1px solid #EBBF53;
+    background-color: #EBBF53;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FEFAF3;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-inline: 48px;
+}
+
+.cross {
+    position: absolute;
+    top: -32px;
+    right: 24px;
+    font-size: 36px;
+    font-family: "Inika", serif;
+    color: #AFA187;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.cross:hover {
+    transform: rotate(90deg);
+}
+
+.popup-opened .popup {
+    /* display: block; */
+    transform: scale(1);
+}
+
+.popup-opened .button-container {
+    display: none;
+}
+
+@media (max-width: 780px) {
+    
+    .popup {
+        border-radius: 36px;
+        padding: 36px;
+    }
+    
+    .upper-part {
+        gap: 12px;
+        justify-content: space-between;
+        padding: 12px;
+        min-height: fit-content;
+    }
+    
+    .upper-part .desert-vector{
+        width: fit-content;
+        max-height: 100px;
+    }
+    
+    .upper-part .desert-vector img{
+        top: -70px;
+        max-width: 170px;
+        max-height: 170px;
+    }
+    
+    .popup-text-div h2 {
+        font-size: 24px;
+        margin: 4px 0;
+    }
+    
+    .popup-text-div p {
+        font-size: 14px;
+    }
+    
+    form {
+        height: 72px;
+        display: block;
+        border-radius: 18px;
+    }
+    
+    form input {
+        height: 50%;
+        padding-inline: 10px;
+        border: 1px solid #AFA187;
+        border-bottom: 0;
+        border-top-right-radius: 18px;
+        border-top-left-radius: 18px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    form button {
+        height: 50%;
+        font-size: 14px;
+        height: 50%;
+        width: 100%;
+        padding-inline: 10px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+    }
+}
